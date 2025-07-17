@@ -11,7 +11,7 @@ body {
 }
 
 .main__container {
-    margin: 4em 2em 4em 2em;
+    margin: 4em 3em 4em 3em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,7 +19,7 @@ body {
 }
 
 .card {
-    padding: 2em;
+    padding: 3em;
     border-radius: 1em;
     display: flex;
     flex-direction: column;
@@ -27,6 +27,10 @@ body {
     letter-spacing: .3px;
     word-spacing: normal;
     
+}
+
+.svg__img {
+    display: none;
 }
 
 .header__card {
@@ -41,16 +45,101 @@ body {
 }
 
 .header__card h2 {
-    font-weight: 300;
-}
-
-.header__card h3,
-.header__card p {
-    line-height: 5;
-    color: aqua;
+    font-weight: 400;
 }
 
 .card__daniel {
     background-color: hsl(263, 55%, 52%);
     color: hsl(214, 17%, 92%);
 }
+
+.card__daniel .img--daniel {
+    border: .2em solid hsl(264, 82%, 80%);
+}
+
+.card__daniel p {
+    color: hsl(264, 82%, 80%);
+}
+
+.card__jonathan {
+    background-color: hsl(217, 19%, 35%);
+    color: #fff;
+}
+
+.card__jeanette {
+    background-color: #fff;
+    color: hsl(217, 19%, 35%);
+}
+
+.card__patrick {
+    background-color:  hsl(219, 29%, 14%);
+    color: hsl(214, 17%, 92%)
+}
+
+.card__patrick .img--patrick {
+    border: .2em solid hsl(263, 55%, 52%);
+}
+
+.card__kiara {
+    background-color: #fff;
+color: hsl(217, 19%, 35%);
+}
+
+.card__kiara h2 {
+    color: hsl(217, 19%, 35%);
+}
+
+@media(min-width: 1024px) {
+    .main__container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 2em;
+        margin: 10em;
+        
+    }
+
+    .card__daniel {
+        grid-column: 1/3;
+        position: relative;
+    }
+
+    .card__daniel > h2,h3,p {
+        z-index: 10;
+    }
+
+    .svg__img {
+        display: block;
+        height: 9.5em;
+        width: auto;
+        position: absolute;
+        right: 5em;
+        top: 0;
+        z-index: 0;
+    }
+
+.card__jeanette {
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+    .card__patrick {
+        grid-column: 2/4;
+    }
+
+    .card__kiara {
+        grid-column: 4;
+        grid-row: 1/3;
+    }
+
+    .attribution {
+        display: none;
+    }
+
+    .card {
+         box-shadow: 10px 10px 37px 6px rgba(0,0,0,0.51);
+        -webkit-box-shadow: 10px 10px 37px 6px rgba(0,0,0,0.51);
+        -moz-box-shadow: 10px 10px 37px 6px rgba(0,0,0,0.51); ;
+    }
+}
+
